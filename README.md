@@ -3,4 +3,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 The project creates browser cookies
 
 Features to be implemented
+
 -Create a checkout cart
