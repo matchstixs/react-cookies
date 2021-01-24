@@ -1,7 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+Single page app showcasing the usage and development of HTTP cookies in web browsers  
 
-The project creates browser cookies
+* HTTP cookies allow for more personal, convenient website visits
 
-Features to be implemented
+* App creates web browser cookie when user select item(s) 
 
--Create a checkout cart
+* Reveals cookies within user browser
+
+bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)
+
+
+
+[^1]Features to be implemented
+[^1]-Create a checkout cart

@@ -1,72 +1,106 @@
 import React, {Component} from 'react';
 import Cookies from 'cookies-js';
+import { Container, Col, Row } from 'reactstrap'
 
 class CookiesFactory extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            sugar: null,
-            chocolate: null,
-            lemon: null, 
-        }
+            itmOne: null,
+            itmTwo: null,
+            itmThree: null,
+            itmFour: null,
+            itmFive: null,
+            itmSix: null,
+            itmSeven: null,
+            itmEight: null
+        };
     };
 
-    // 1. click button
-    // 2. get cookie    
-    // 3. render cookie
+    // 1. get cookie
+    // 2. render cookie
+    // 3. click button
 
 // get cookie 
-    getCookie(flavor) {
-        return Cookies.get(flavor) || 0;
-    }
-
-    // sugar click button
-    sugarButton() {
-        const sugarCookie = this.getCookie('sugar');
-        const newCount = parseInt(sugarCookie, 10) + 1;
-        Cookies.set('sugar', newCount);
-        this.setState({sugar: newCount});
-    }
-
-    // chocolate click button
-    chocolateButton() {
-        const chocolateCookie = this.getCookie('chocolate');
-        const newCount = parseInt(chocolateCookie, 10) + 1;
-        Cookies.set('chocolate', newCount);
-        this.setState({chocolate: newCount});
-    }
-
-    // lemon click button
-    lemonButton() {
-        const lemonCookie = this.getCookie('lemon');
-        const newCount = parseInt(lemonCookie, 10) + 1;
-        Cookies.set('lemon', newCount);
-        this.setState({lemon: newCount});
+    getCookie(trendingItems) {
+        return Cookies.get(trendingItems) || 0;
     };
+
+    // Trending #1 cookie
+    itmOneCookie() {
+        const itmOneCookie = this.getCookie('jacket');
+        const newCount = parseInt(itmOneCookie, 10) + 1;
+        Cookies.set('jacket', newCount);
+        this.setState({jacket: newCount});
+    }
+
+    // Trending 2 cookie
+    itmTwoCookie() {
+        const itmTwoCookie = this.getCookie('shirt');
+        const newCount = parseInt(itmTwoCookie, 10) + 1;
+        Cookies.set('shirt', newCount);
+        this.setState({shirt: newCount});
+    }
+
+    // Trending 3 cookie
+    itmThreeCookie() {
+        const itmThreeCookie = this.getCookie('pants');
+        const newCount = parseInt(itmThreeCookie, 10) + 1;
+        Cookies.set('pants', newCount);
+        this.setState({pants: newCount});
+    };
+
+    // Trending 4 cookie
+    itmFourCookie() {
+        const itmFourCookie = this.getCookie('shoes');
+        const newCount = parseInt(itmFourCookie, 10) + 1;
+        Cookies.set('shoes', newCount);
+        this.setState({shoes: newCount});
+    };
+
+
 
 
     // render
         render() {
             return(
-                <div>
-                    <button id="sugar" onClick={ (flavor) => this.sugarButton()}>
-                    <img src="/images/sugar_cookies.jpg" alt="sugary cookie"></img>
-                    </button>
+                <Container class='products'>
+<Row>
 
-                    <button id="chocolate" onClick={ (flavor) => this.chocolateButton()}>
-                    <img src="/images/chocolate_cookies.jpg" alt="chocolate wasted"></img>
+<Col id='col1'>
+                    <button id="jacket" onClick={ (trendingItems) => this.itmOneCookie()}>
+                    <img src="https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8amFja2V0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Jacket"></img>
                     </button>
+</Col>
 
-                    <button id="lemon" onClick={ (flavor) => this.lemonButton()}>
-                    <img src="images/lemon_cookies.jpg" alt="lemon drop"></img>
+<Col id='col2'>
+                    <button id="shirt" onClick={ (trendingItems) => this.itmTwoCookie()}>
+                    <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hpcnR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Shirt"></img>
                     </button>
-                    
-                    {this.state.sugar}
-                    {this.state.chocolate}
-                    {this.state.lemon}
-                </div>
-            );
-        };
+</Col>
+
+<Col id='col3'>                  
+                    <button id="pants" onClick={ (trendingItems) => this.itmThreeCookie()}>
+                    <img src="https://images.unsplash.com/photo-1560243563-062bfc001d68?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8cGFudHN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pants"></img>
+                    </button>
+</Col>                   
+
+<Col id='col4'>
+                    <button id="shoes" onClick={ (trendingItems) => this.itmFourCookie()}>
+                    <img src="https://images.unsplash.com/photo-1578116922645-3976907a7671?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Shoes"></img>
+                    </button>
+</Col>
+
+</Row>
+
+{/* PRINT COOKIES */}
+{this.state.jacket}
+{this.state.shirt}
+{this.state.pants}
+{this.state.shoes}
+</Container>
+);
+    };
 
 
 };

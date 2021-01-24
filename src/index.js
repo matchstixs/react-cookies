@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CookiesFactory from './components/CookiesFactory.js';
+import App from './components/app.js';
+import './index.css';
 
-ReactDOM.render(<CookiesFactory />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
